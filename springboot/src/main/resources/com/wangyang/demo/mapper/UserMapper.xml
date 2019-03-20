@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wangyang.demo.mapper.UserMapper">
+
+    <!--<resultMap type="com.wangyang.demo.entity.User" id="getUser" >-->
+        <!--<result property="userName" column="userName"/>-->
+        <!--<result property="password" column="passworld"/>-->
+    <!--</resultMap>-->
+    <select id="getUser"  resultType="com.wangyang.demo.entity.User">
+        select * from user where userName = #{userName} and passworld=#{passworld}
+    </select>
+
+
+</mapper>

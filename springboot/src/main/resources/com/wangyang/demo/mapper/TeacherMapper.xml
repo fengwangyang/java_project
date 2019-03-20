@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.wangyang.demo.mapper.TeacherMapper">
+    <resultMap type="com.wangyang.demo.entity.Teacher" id="getTeacher" >
+        <result property="id" column="id"/>
+        <result property="num" column="tnum"/>
+
+        <result property="name" column="tname"/>
+        <result property="sex" column="tsex"/>
+    </resultMap>
+    <select id="addTeacher"  resultType="com.wangyang.demo.entity.Teacher">
+        insert into teacher (tname,tnum,tsex) values (#{name},#{num},#{sex})
+    </select>
+
+    <select id="getTeacher"  resultMap="getTeacher">
+        select * from teacher
+    </select>
+    <select id="delTeacher"  resultType="String">
+        delete from teacher where id=#{id}
+    </select>
+    <select id="updateTeacher"  resultType="String">
+        update teacher set tname=#{name},tnum=#{num},tsex =#{sex} where id=#{id}
+    </select>
+
+</mapper>
